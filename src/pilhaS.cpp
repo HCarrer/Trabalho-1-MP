@@ -11,25 +11,33 @@ PilhaSTC* PilhaSTC::createStack() {
 }
 
 void PilhaSTC::destroyStack(PilhaSTC* pilha) {
-    pilha->setSize(pilha, 0);
     free(pilha);
+    pilha = NULL;
     std::cout << "Pilha excluida com sucesso" << std::endl;
 }
 
 void PilhaSTC::push(PilhaSTC *pilha, ItemType dado) {
-    pilha->topo++;
-    pilha->vetor[topo].valor = dado.valor;
-    pilha->tamanho++;
-    std::cout << "Item adicionado" << std::endl;
+    if(pilha->topo + 1 >= pilha->capacidade) {
+        throw(std::invalid_argument) "Erro, a pilha já está cheia!";
+    } else {
+        pilha->topo++;
+        pilha->vetor[topo].valor = dado.valor;
+        pilha->tamanho++;
+        std::cout << "Item adicionado" << std::endl;
+    }
 }
 
 ItemType PilhaSTC::top(PilhaSTC* pilha) {
-    return pilha->vetor[topo];
+    if(pilha->topo == -1){
+        throw(std::invalid_argument) "A pilha está vazia";
+    } else {
+        return pilha->vetor[topo];
+    }
 }
 
 ItemType PilhaSTC::pop(PilhaSTC* pilha) {
     if(pilha->topo == -1) {
-        std::cout << "Pilha vazia. Não foi possível retirar elemento" << std::endl;
+        throw (std::invalid_argument) "Erro! A pilha está vazia";
     } else {
         pilha->topo--;
         pilha->tamanho--;
@@ -83,16 +91,16 @@ bool PilhaSTC::setSize(PilhaSTC* pilha, int tamanho) {
             pilha->topo = tamanho - 1;
             return 1;
         } else {
-            exit(1);
             return 0;
         }
     }
 }
 
-void PilhaSTC::show(PilhaSTC* pilha, int elemento) {
+ItemType PilhaSTC::show(PilhaSTC* pilha, int elemento) {
     if(elemento > pilha->capacidade) {
-        std::cout << "Esse elemento nao existe" << std::endl;
+        throw (std::invalid_argument) "Esse elemento não existe";
     } else {
         std::cout << pilha->vetor[elemento-1].valor << std::endl;
+        return pilha->vetor[elemento-1];
     }
 }

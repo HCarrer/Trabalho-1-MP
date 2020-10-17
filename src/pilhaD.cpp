@@ -87,7 +87,7 @@ bool Pilha::isFull(Pilha* pilha) {
 
 bool Pilha::setSize(Pilha* pilha, int tamanho) {
     if(tamanho >= pilha->tamanho) {
-        throw std::invalid_argument ("O tamanho indicado já é maior ou igual ao tamanho atual da piha. Nada foi feito.");
+        std::cout << "O tamanho indicado já é maior ou igual ao tamanho atual da piha. Nada foi feito." << std::endl;
         return 0;
     }
     else {

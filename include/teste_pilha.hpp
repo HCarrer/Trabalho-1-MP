@@ -13,12 +13,32 @@ private:
 public:
     bool estado;
 
-    void teste_create();
-    void teste_push();
-    void teste_top();
-    void teste_pop();
-    void teste_size();
-    void teste_setSize();
+    bool teste_create();
+    bool teste_destroy();
+    bool teste_push();
+    bool teste_top();
+    bool teste_pop();
+    bool teste_size();
+    bool teste_setSize();
+    bool teste_IsFull();
+    bool teste_IsEmpty();
+};
+
+class TestePilhaSTC : PilhaSTC {
+private:
+    PilhaSTC pilha;
+public:
+    bool estado;
+
+    bool teste_create();
+    bool teste_destroy();
+    bool teste_push();
+    bool teste_top();
+    bool teste_pop();
+    bool teste_size();
+    bool teste_setSize();
+    bool teste_IsFull();
+    bool teste_IsEmpty();
 };
 
 #endif //TESTE_PILHA_HPP

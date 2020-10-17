@@ -48,7 +48,7 @@ public:
     bool isFull(PilhaSTC* pilha);
     bool isEmpty(PilhaSTC* pilha);
     
-    void show(PilhaSTC* pilha, int elemento);
+    ItemType show(PilhaSTC* pilha, int elemento);
 };
 
 #endif // PILHA_HPP
