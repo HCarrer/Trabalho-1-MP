@@ -1,5 +1,17 @@
-#ifndef TESTE_PILHA_HPP
-#define TESTE_PILHA_HPP
+// Copyright Henrique de Miranda Carrer 2020
+
+/**
+ * @file teste_pilha.hpp
+ * @author Henrique Carrer
+ * @brief Biblioteca simples de testes de Pilha
+ * @version 0.1
+ *
+ * @copyright Copyright (c) 2020
+ *
+ */
+
+#ifndef INCLUDE_TESTE_PILHA_HPP_
+#define INCLUDE_TESTE_PILHA_HPP_
 
 #define SUCESSO 1
 #define FALHA 0
@@ -7,12 +19,17 @@
 #include <iostream>
 #include "pilha.hpp"
 
+/**
+* \mainpage
+* Classe referente aos testes de métodos
+* da classe "Pilha", responsável por uma
+* pilha dinâmica.
+*/
 class TestePilhaD : Pilha {
-private:
+ private:
     Pilha* pilha;
-public:
+ public:
     bool estado;
-
     bool teste_create();
     bool teste_destroy();
     bool teste_push();
@@ -24,12 +41,17 @@ public:
     bool teste_IsEmpty();
 };
 
+/**
+* \mainpage
+* Classe referente aos testes de métodos
+* da classe "PilhaSTC", responsável por uma
+* pilha estática.
+*/
 class TestePilhaSTC : PilhaSTC {
-private:
+ private:
     PilhaSTC pilha;
-public:
+ public:
     bool estado;
-
     bool teste_create();
     bool teste_destroy();
     bool teste_push();
@@ -41,4 +63,4 @@ public:
     bool teste_IsEmpty();
 };
 
-#endif //TESTE_PILHA_HPP
+#endif  // INCLUDE_TESTE_PILHA_HPP_
