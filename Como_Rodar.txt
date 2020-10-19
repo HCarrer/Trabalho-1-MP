@@ -1,0 +1,4 @@
+Para rodar o programa, navegue até o diretório "src" do arquivo baixado,
+em seguida execute o comando "$make" e em seguida execute "$ ./pilha" e
+rodará o programa. O output esperado é uma tela dizendo que todos os 18 
+testes resultaram em SUCESSO.
